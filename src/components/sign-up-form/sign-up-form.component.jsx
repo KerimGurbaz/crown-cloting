@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -13,13 +15,15 @@ const SignUpForm = () => {
 
   console.log("formFields", formFields);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // createAuthUserWithEmailAndPassword(email, password); //!
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
-
-  // console.log(displayName, email, password, confirmPassword);
-
   return (
     <div>
       <h1>Sign up with your email and password</h1>
