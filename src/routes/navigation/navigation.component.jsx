@@ -1,8 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
-
+import { BsBag } from "react-icons/bs";
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./navigation.styles.scss";
@@ -30,6 +29,7 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+          <BsBag />
         </div>
       </div>
       <Outlet />
