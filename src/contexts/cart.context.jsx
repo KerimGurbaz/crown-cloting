@@ -72,7 +72,7 @@ const cartReducer = (state, action) => {
       throw new Error(`unhandled type of ${type} in cartReducer`);
   }
 };
-
+let x = "burasi duzeltilecek";
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
