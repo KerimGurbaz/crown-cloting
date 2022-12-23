@@ -134,6 +134,8 @@ export const CartProvider = ({ children }) => {
     updateCartItemsReducer(newCartItems);
   };
 
+  const setIsCartOpen = (bool) => {};
+
   const value = {
     isCartOpen,
     setIsCartOpen: () => {},
