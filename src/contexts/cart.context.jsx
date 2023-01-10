@@ -148,6 +148,9 @@ export const CartProvider = ({ children }) => {
   const setIsCartOpen = (bool) => {
     dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool));
   };
+  const setIsCartOpen = (bool) => {
+    dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool));
+  };
 
   const value = {
     isCartOpen,
