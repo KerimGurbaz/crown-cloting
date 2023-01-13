@@ -1,28 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import './index.scss';
-import App from './App';
-import { UserProvider } from './contexts/user.context';
-import reportWebVitals from './reportWebVitals';
-import {CategoriesProvider} from './contexts/categories.context'
-import { CartProvider } from './contexts/cart.context';
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import { Provider } from "react-redux";
+import App from "./App";
+import { UserProvider } from "./contexts/user.context";
+
+import { CategoriesProvider } from "./contexts/categories.context";
+import { CartProvider } from "./contexts/cart.context";
+import {store} from './store/store'
+
+import "./index.scss";
+
+const rootElemet = document.getElementById("root");
+render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-           <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
-  
-  </React.StrictMode>
-);   
+    <Provider store={store}>
+      <BrowserRouter>
+        <UserProvider>
+          <CategoriesProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </CategoriesProvider>
+        </UserProvider>
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+  rootElemet
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
