@@ -9,6 +9,7 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 // import { UserContext } from "../../contexts/user.context";
 
 import { CartContext } from "../../contexts/cart.context";
+import { selectCurrentUser } from "../../store/user/user.selector";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import {
@@ -19,7 +20,7 @@ import {
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const currentUser = useSelector(selectCurrentUser);
   // const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
 
