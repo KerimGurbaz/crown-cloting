@@ -6,6 +6,14 @@ import Category from "../category/category.component";
 import "./shop.styles.scss";
 
 const Shop = () => {
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoryMap = await getCategoriesAndDocuments("categories");
+      setCategoriesMap(categoryMap);
+    };
+    getCategoriesMap();
+  }, []);
+
   return (
     <Routes>
       <Route index element={<CategoriesPreview />} />
