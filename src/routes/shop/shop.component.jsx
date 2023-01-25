@@ -1,9 +1,13 @@
+import { useEffect } from "react";
+
 import { Routes, Route } from "react-router-dom";
 
 import CategoriesPreview from "../categories-preview/categories-preview.component";
 import Category from "../category/category.component";
 
-import "./shop.styles.scss";
+import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
+
+// import "./shop.styles.scss";
 
 const Shop = () => {
   useEffect(() => {
