@@ -8,7 +8,7 @@ import CategoriesPreview from "../categories-preview/categories-preview.componen
 import Category from "../category/category.component";
 
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import { setCategoriesMap } from "../../store/categories/category.action";
+import { setCategories } from "../../store/categories/category.action";
 
 // import "./shop.styles.scss";
 
@@ -19,7 +19,7 @@ const Shop = () => {
     const getCategoriesMap = async () => {
       const categoriesArray = await getCategoriesAndDocuments("categories");
       console.log(categoriesArray);
-      // dispatch(setCategoriesMap(categoryMap));
+      dispatch(setCategories(categoriesArray));
     };
     getCategoriesMap();
   }, []);
